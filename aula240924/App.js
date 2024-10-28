@@ -4,21 +4,21 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 export default function App() {
   const [input1, setInput1] = useState('');
   const [input2, setInput2] = useState('');
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState('');
 
-  const handleSum = () => {
+  const soma = () => {
     setResult(parseFloat(input1) + parseFloat(input2));
   };
 
-  const handleSubtract = () => {
+  const subtracao = () => {
     setResult(parseFloat(input1) - parseFloat(input2));
   };
 
-  const handleMultiply = () => {
+  const multiplicacao = () => {
     setResult(parseFloat(input1) * parseFloat(input2));
   };
 
-  const handleDivide = () => {
+  const divisao = () => {
     if (parseFloat(input2) !== 0) {
       setResult(parseFloat(input1) / parseFloat(input2));
     } else {
@@ -47,16 +47,16 @@ export default function App() {
       />
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={handleSum}>
+        <TouchableOpacity style={styles.button} onPress={soma}>
           <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handleSubtract}>
+        <TouchableOpacity style={styles.button} onPress={subtracao}>
           <Text style={styles.buttonText}>-</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handleMultiply}>
+        <TouchableOpacity style={styles.button} onPress={multiplicacao}>
           <Text style={styles.buttonText}>*</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handleDivide}>
+        <TouchableOpacity style={styles.button} onPress={divisao}>
           <Text style={styles.buttonText}>/</Text>
         </TouchableOpacity>
       </View>
